@@ -1,11 +1,7 @@
 // Generated from ClickHouseLexer.g4 by ANTLR 4.13.0
-package com.kuaishou.ygy.antlr;
+package com.ygy.sql.parser.antlr;
 
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.Lexer;
-import org.antlr.v4.runtime.RuntimeMetaData;
-import org.antlr.v4.runtime.Vocabulary;
-import org.antlr.v4.runtime.VocabularyImpl;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATN;
 import org.antlr.v4.runtime.atn.ATNDeserializer;
 import org.antlr.v4.runtime.atn.LexerATNSimulator;

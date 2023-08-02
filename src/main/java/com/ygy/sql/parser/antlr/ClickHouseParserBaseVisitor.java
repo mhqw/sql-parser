@@ -1,5 +1,5 @@
 // Generated from ClickHouseParser.g4 by ANTLR 4.13.0
-package com.kuaishou.ygy.antlr;
+package com.ygy.sql.parser.antlr;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**

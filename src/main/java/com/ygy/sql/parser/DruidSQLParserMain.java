@@ -1,4 +1,4 @@
-package com.kuaishou.ygy;
+package com.ygy.sql.parser;
 
 import java.util.ArrayList;
 import java.util.List;

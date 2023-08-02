@@ -11,6 +11,8 @@
 
 ## Antlr SQL Parser
 
+**现支持解析最外层查询列的列名与别名**
+
 请使用AntlrSQLParserMain
 
 将需要解析的sql语句放入main函数中的sql字符串里，运行程序便会在控制台打印sql查询语句最外层的查询列
