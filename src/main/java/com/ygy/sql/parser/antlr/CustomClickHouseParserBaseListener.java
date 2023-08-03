@@ -33,15 +33,24 @@ public class CustomClickHouseParserBaseListener extends ClickHouseParserBaseList
     public void enterColumnsExprColumn(ClickHouseParser.ColumnsExprColumnContext ctx) {
         if (ctx != null && ctx.getChildCount() == 1) {
             ParseTree child = ctx.getChild(0);
-            if (child.getChildCount() == 1) {
-                columns.add(new Column(child.getChild(0).getText(), "", ""));
-            } else if (child.getChildCount() == 2) {
-                columns.add(new Column(child.getChild(0).getText(), "", child.getChild(1).getText()));
-            } else if (child.getChildCount() == 3) {
-                columns.add(new Column(child.getChild(0).getText(), child.getChild(1).getText(), child.getChild(2).getText()));
-            } else if (child.getChildCount() > 3) {
+            if (child instanceof ClickHouseParser.ColumnExprAliasContext) {
+                if (child.getChildCount() == 2) {
+                    columns.add(new Column(child.getChild(0).getText(), "", child.getChild(1).getText()));
+                } else if (child.getChildCount() == 3) {
+                    columns.add(new Column(child.getChild(0).getText(), child.getChild(1).getText(), child.getChild(2).getText()));
+                }
+            } else {
                 columns.add(new Column(child.getText(), "", ""));
             }
+//            if (child.getChildCount() == 1) {
+//                columns.add(new Column(child.getChild(0).getText(), "", ""));
+//            } else if (child.getChildCount() == 2) {
+//                columns.add(new Column(child.getChild(0).getText(), "", child.getChild(1).getText()));
+//            } else if (child.getChildCount() == 3) {
+//                columns.add(new Column(child.getChild(0).getText(), child.getChild(1).getText(), child.getChild(2).getText()));
+//            } else if (child.getChildCount() > 3) {
+//                columns.add(new Column(child.getText(), "", ""));
+//            }
         }
     }
 
